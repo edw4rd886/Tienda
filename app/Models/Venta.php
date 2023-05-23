@@ -10,27 +10,29 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Almacen
+ * Class Venta
  * 
- * @property int $id_producto
+ * @property int $id
  * @property Carbon $fecha
- * @property int $stock
+ * @property int $id_cliente
+ * @property int $id_empleado
  *
  * @package App\Models
  */
-class Almacen extends Model
+class Venta extends Model
 {
-	protected $table = 'almacen';
-	protected $primaryKey = 'id_producto';
+	protected $table = 'ventas';
 	public $timestamps = false;
 
 	protected $casts = [
 		'fecha' => 'datetime',
-		'stock' => 'int'
+		'id_cliente' => 'int',
+		'id_empleado' => 'int'
 	];
 
 	protected $fillable = [
 		'fecha',
-		'stock'
+		'id_cliente',
+		'id_empleado'
 	];
 }

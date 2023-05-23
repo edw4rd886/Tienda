@@ -6,31 +6,34 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Almacen
+ * Class Producto
  * 
  * @property int $id_producto
- * @property Carbon $fecha
- * @property int $stock
+ * @property string $nombre
+ * @property string $descripcion
+ * @property int $precio
+ * @property int $id_cliente
  *
  * @package App\Models
  */
-class Almacen extends Model
+class Producto extends Model
 {
-	protected $table = 'almacen';
+	protected $table = 'productos';
 	protected $primaryKey = 'id_producto';
 	public $timestamps = false;
 
 	protected $casts = [
-		'fecha' => 'datetime',
-		'stock' => 'int'
+		'precio' => 'int',
+		'id_cliente' => 'int'
 	];
 
 	protected $fillable = [
-		'fecha',
-		'stock'
+		'nombre',
+		'descripcion',
+		'precio',
+		'id_cliente'
 	];
 }
